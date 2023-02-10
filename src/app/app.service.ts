@@ -7,6 +7,6 @@ export class AppUserService {
     constructor(private httpClient: HttpClient) { }
     
     createUser(userObject: User) {
-        return this.httpClient.post('http://localhost:3000/users', userObject);
+        return this.httpClient.post('https://nestjs-users-demo.azurewebsites.net/users', userObject);
     }
 }

@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { DialogCreatedUserDialog } from './dialogs/dialog-created-user-sucess.component';
+import { AngularSignaturePadModule } from '@almothafar/angular-signature-pad';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { DialogCreatedUserDialog } from './dialogs/dialog-created-user-sucess.co
     MatNativeDateModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularSignaturePadModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-MX' }

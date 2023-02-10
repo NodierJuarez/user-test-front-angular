@@ -41,7 +41,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-10">
                 <mat-form-field appearance="outline">
                   <mat-label>Número de teléfono</mat-label>
                   <input formControlName="phone" matInput placeholder="Número de teléfono">
@@ -53,7 +53,7 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-2">
                 <mat-form-field appearance="outline">
                   <mat-label>Extensión</mat-label>
                   <input formControlName="ext" matInput placeholder="Extensión">
@@ -61,8 +61,25 @@
               </div>
             </div>
             <div class="row">
-              <div *ngIf="!isLoading" class="text-end">
-                <button type="submit" mat-raised-button color="primary">Enviar</button>
+              <div class="col-12">
+                <signature-pad class="bg-white" #signature [options]="signaturePadOptions" (drawStart)="drawStart($event)" (drawEnd)="drawComplete($event)"></signature-pad>
+              </div>
+              <div class="col-12">
+                <mat-error *ngIf=" userForm.dirty && userForm.get('signature')?.hasError('required')">
+                  Firma es  <strong>requerida</strong>
+                </mat-error>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div *ngIf="!isLoading" class="text-start">
+                  <button type="button" (click)="resetDraw()" mat-raised-button color="primary">Limpiar firma</button>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div *ngIf="!isLoading" class="text-end">
+                  <button type="submit" mat-raised-button color="primary">Enviar</button>
+                </div>
               </div>
               <div *ngIf="isLoading">
                 <mat-progress-bar mode="indeterminate"></mat-progress-bar>
