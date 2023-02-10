@@ -1,0 +1,19 @@
+.box-center {
+    /* centrar vertical y horizontalmente */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 40px;
+    margin: 150px auto;
+}
+
+// div {
+//     outline: 1px green solid;
+// }
+
+mat-form-field {
+    width: 100%;
+}
